@@ -1,6 +1,8 @@
 usermod -G wheel vagrant
 
-yum -y install nginx vim sl 
+yum -y install epel-release
+
+yum -y install vim sl nginx
 
 systemctl enable nginx
 
