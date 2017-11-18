@@ -16,8 +16,8 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "web-dev"
   config.vm.provision "shell", path: "provision.sh"
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
-  config.vm.synced_folder "./","/vagrant", disabled: true
-  config.vm.synced_folder "www","/vagrant/www"
+#  config.vm.synced_folder "./","/vagrant", disabled: true
+#  config.vm.synced_folder "www","/vagrant/www"
  #, id: nginx
   #--config.vm.provision "shell", path: "provision.sh"
   # Disable automatic box update checking. If you disable this, then
