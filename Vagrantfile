@@ -14,7 +14,10 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "williamyeh/centos7-docker"
   config.vm.hostname = "web-dev"
-  config.vm.network "forwarded_port", guest: 80, host: 8080 #, id: nginx
+  config.vm.provision "shell", path: "provision.sh"
+  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+
+ #, id: nginx
   #--config.vm.provision "shell", path: "provision.sh"
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
