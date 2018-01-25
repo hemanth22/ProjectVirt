@@ -8,4 +8,4 @@ systemctl enable nginx
 
 systemctl start nginx
 
-cp -r /vagrant/www/ /usr/share/nginx/html 
+cp -r /vagrant/www/index.html /usr/share/nginx/html/index.html
