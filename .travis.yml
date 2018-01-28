@@ -1,0 +1,14 @@
+sudo: required
+language: bash
+
+install:
+  - apt-get install -y vagrant
+
+script:
+  - vagrant up
+  - vagrant ssh
+  - wget -O- localhost:8080
+  - exit
+  
+after_script:
+  - vagrant destroy
