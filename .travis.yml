@@ -8,14 +8,14 @@ install:
   - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
   - sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list'
   - sudo apt-get update
-  - sudo apt-get install virtualbox-5.2
+  - sudo apt-get install virtualbox-4.2
   - VBoxManage -v
-  
+
 script:
   - vagrant up
   - vagrant ssh
   - wget -O- localhost:8080
   - exit
-  
+
 after_script:
   - vagrant destroy
