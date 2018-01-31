@@ -1,3 +1,5 @@
+#!/bin/bash
+
 usermod -aG wheel vagrant
 
 yum -y install epel-release
