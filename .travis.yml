@@ -13,8 +13,8 @@ install:
 
 script:
   - vagrant box add bitroid https://github.com/CommanderK5/packer-centos-template/releases/download/0.7.2/vagrant-centos-7.2.box
-  - vagrant up
-  - vagrant ssh "wget -O- localhost:8080"
+  - sudo vagrant up
+  - sudo vagrant ssh -c 'wget -O- localhost'
   - exit
 
 after_script:
