@@ -38,14 +38,18 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  #config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
   #config.vm.network "public_network", use_dhcp_assigned_default_route: true
-   config.vm.network "public_network", auto_config: true
-
+   #config.vm.network "public_network", auto_config: true
+   #config.vm.network "public_network",  HostInterfaceNetworking-eth0
+   onfig.vm.network "public_network",  ip: "10.20.0.35", bridge: "en0: HostInterfaceNetworking-eth0"
+   #10.20.0.35
+   #config.vm.network "public_network", ip: "192.168.0.17"
+   #config.vm.network "public_network", bridge: "en1: Wi-Fi (AirPort)"
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
