@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "bitroid"
-  config.vm.hostname = "web-dev"
+  config.vm.hostname = "webdev"
   config.vm.provision "shell", path: "provision.sh"
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
 #  config.vm.synced_folder "./","/vagrant", disabled: true
