@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
   #config.vm.network "public_network", use_dhcp_assigned_default_route: true
    #config.vm.network "public_network", auto_config: true
    #config.vm.network "public_network",  HostInterfaceNetworking-eth0
-   onfig.vm.network "public_network",  ip: "127.0.0.1", bridge: "lo"
+   config.vm.network "public_network", bridge: "en0"
    #10.20.0.35
    #config.vm.network "public_network", ip: "192.168.0.17"
    #config.vm.network "public_network", bridge: "en1: Wi-Fi (AirPort)"
@@ -55,7 +55,6 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
