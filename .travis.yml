@@ -19,3 +19,8 @@ script:
 
 after_script:
   - vagrant destroy
+
+notifications:
+ slack:
+   rooms:
+     - nothingorganization:GN1JzklSpbMyfZVWcS05U6a0#general
