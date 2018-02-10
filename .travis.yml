@@ -2,7 +2,6 @@ sudo: required
 language: bash
 
 install:
-  - sudo apt-get install -y vagrant
   - sudo apt-get -y install gcc make linux-headers-$(uname -r) dkms
   - wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
   - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
@@ -10,6 +9,10 @@ install:
   - sudo apt-get update
   - sudo apt-get install virtualbox-4.3
   - VBoxManage -v
+  - apt-get install -q virtualbox --fix-missing
+  - wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+  - dpkg -i vagrant_1.7.2_x86_64.deb
+  - bundle install
 
 script:
   - vagrant box add centos7 https://github.com/CommanderK5/packer-centos-template/releases/download/0.7.2/vagrant-centos-7.2.box
