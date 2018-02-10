@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bitroid"
   config.vm.hostname = "webdev"
   config.vm.provision "shell", path: "provision.sh"
-  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1", auto_correct: true
+  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
 #  config.vm.synced_folder "./","/vagrant", disabled: true
 #  config.vm.synced_folder "www","/vagrant/www"
  #, id: nginx
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  #config.vm.network "public_network"
+  config.vm.network "public_network", bridge: "eth0"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
