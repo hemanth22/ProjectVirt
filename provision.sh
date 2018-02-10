@@ -1,7 +1,5 @@
 usermod -aG wheel vagrant
-
 #yum makecache fast
-
 yum -y install epel-release
 
 yum -y install vim sl nginx

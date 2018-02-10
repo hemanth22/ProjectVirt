@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos7"
   config.vm.hostname = "webdev"
   #config.vm.cleanup :shell, :path => "cleanup.sh"
-  #config.vm.provision "shell", path: "provision.sh"
+  config.vm.provision "shell", path: "provision.sh"
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
 #  config.vm.synced_folder "./","/vagrant", disabled: true
 #  config.vm.synced_folder "www","/vagrant/www"
@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
   #config.vm.network "public_network", use_dhcp_assigned_default_route: true
    #config.vm.network "public_network", auto_config: true
    #config.vm.network "public_network",  HostInterfaceNetworking-eth0
-   config.vm.network "public_network", bridge: "eth0"
+   #config.vm.network "public_network", bridge: "eth0"
    #10.20.0.35
    #config.vm.network "public_network", ip: "192.168.0.17"
    #config.vm.network "public_network", bridge: "en1: Wi-Fi (AirPort)"
