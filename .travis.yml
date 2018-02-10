@@ -12,6 +12,8 @@ install:
   - VBoxManage -v
 
 script:
+  - ifconfig -a | grep inet
+  - ifconfig -a
   - vagrant box add bitroid https://vagrantcloud.com/williamyeh/boxes/centos7-docker/versions/1.12.1.20160830/providers/virtualbox.box
   - sudo vagrant up
   - sudo vagrant ssh -c 'wget -O- localhost'
