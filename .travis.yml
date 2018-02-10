@@ -18,11 +18,12 @@ script:
   - vagrant box add bitroid https://github.com/CommanderK5/packer-centos-template/releases/download/0.7.2/vagrant-centos-7.2.box
   - sudo vagrant up
   - sudo vagrant ssh -c 'wget -O- localhost'
-  
+
 after_script:
   - vagrant destroy -f
 
 notifications:
- slack:
+  email: false
+  slack:
    rooms:
      - nothingorganization:GN1JzklSpbMyfZVWcS05U6a0#general
