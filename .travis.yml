@@ -8,17 +8,17 @@ install:
   - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
   - sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list'
   - sudo apt-get update
-  - sudo apt-get install virtualbox-4.2
+  - sudo apt-get install virtualbox-4.3
   - VBoxManage -v
 
 script:
-  - vagrant box add bitroid https://github.com/CommanderK5/packer-centos-template/releases/download/0.7.2/vagrant-centos-7.2.box
+  - vagrant box add bitroid https://vagrantcloud.com/williamyeh/boxes/centos7-docker/versions/1.12.1.20160830/providers/virtualbox.box
   - sudo vagrant up
   - sudo vagrant ssh -c 'wget -O- localhost'
   - exit
 
 after_script:
-  - vagrant destroy
+  - vagrant destroy -f
 
 notifications:
  slack:
