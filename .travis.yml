@@ -15,7 +15,7 @@ script:
   - ifconfig -a | grep inet
   - ifconfig -a
   - VBoxManage list bridgedifs
-  - vagrant box add bitroid https://vagrantcloud.com/williamyeh/boxes/centos7-docker/versions/1.12.1.20160830/providers/virtualbox.box
+  - vagrant box add bitroid https://github.com/CommanderK5/packer-centos-template/releases/download/0.7.2/vagrant-centos-7.2.box
   - sudo vagrant up
   - sudo vagrant ssh -c 'wget -O- localhost'
   - exit
