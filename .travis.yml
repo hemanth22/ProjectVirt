@@ -12,8 +12,6 @@ install:
   - VBoxManage -v
 
 script:
-  - vagrant plugin install virtualbox
-  - vagrant plugin list
   - vagrant box add centos7 https://github.com/CommanderK5/packer-centos-template/releases/download/0.7.2/vagrant-centos-7.2.box
   - vagrant up
   - vagrant ssh -c 'wget -O- localhost'
