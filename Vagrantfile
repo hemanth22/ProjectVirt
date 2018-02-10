@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
   #config.vm.network "public_network", use_dhcp_assigned_default_route: true
    #config.vm.network "public_network", auto_config: true
    #config.vm.network "public_network",  HostInterfaceNetworking-eth0
-   config.vm.network "public_network",  ip: "10.20.0.35", bridge: "en0"
+   config.vm.network "public_network",  ip: "10.20.0.35", bridge: "eth0"
    #10.20.0.35
    #config.vm.network "public_network", ip: "192.168.0.17"
    #config.vm.network "public_network", bridge: "en1: Wi-Fi (AirPort)"
