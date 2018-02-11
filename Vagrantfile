@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "centos7"
+  config.vm.box = "williamyeh/centos7-docker"
   config.vm.hostname = "webdev"
   #config.vm.cleanup :shell, :path => "cleanup.sh"
   config.vm.provision "shell", path: "provision.sh"
