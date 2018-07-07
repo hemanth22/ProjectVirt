@@ -17,6 +17,8 @@ Vagrant.configure("2") do |config|
   #config.vm.cleanup :shell, :path => "cleanup.sh"
   config.vm.provision "shell", path: "provision.sh"
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+  node1.vm.network "private_network", ip: "172.32.46.44"
+
 #  config.vm.synced_folder "./","/vagrant", disabled: true
 #  config.vm.synced_folder "www","/vagrant/www"
  #, id: nginx
